@@ -1,19 +1,16 @@
 package com.sliit.lk.sellnbuy.model;
 
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "tbl_order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private  int id;
     private int productId;
     private int qty;
-    private String date;
-    private  int orderID;
+    private String orderDate;
     private double totalBill;
 
     public int getProductId() {
@@ -32,20 +29,20 @@ public class Order {
         this.qty = qty;
     }
 
-    public String getDate() {
-        return date;
+    public String getOrderDate() {
+        return orderDate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 
-    public int getOrderID() {
-        return orderID;
+    public int getId() {
+        return id;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public double getTotalBill() {
