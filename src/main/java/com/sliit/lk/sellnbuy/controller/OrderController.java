@@ -23,9 +23,9 @@ public class OrderController {
 
         Order order = new Order();
         order.setOrderDate(new Date().toString());
-        order.setProductId(1);
-        order.setQty(5);
-        order.setTotalBill(5000);
+        order.setProductId(Integer.parseInt(body.get("productId")));
+        order.setQty(Integer.parseInt(body.get("qty")));
+        order.setTotalBill(Integer.parseInt(body.get("totalBill")));
 
         Order savedOrder = orderRepository.save(order);
         return ResponseEntity
