@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  int id;
+    private int id;
     private int productId;
     private int qty;
     private String orderDate;
