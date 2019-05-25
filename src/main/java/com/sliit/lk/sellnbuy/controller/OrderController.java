@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Controller
+@CrossOrigin
 @RequestMapping(path = "/order")
 public class OrderController {
     @Autowired
@@ -41,6 +42,11 @@ public class OrderController {
         orderRepository.deleteById(Integer.parseInt(body.get("id")));
 //        return true;
 //
+    }
+    @GetMapping("/get-orders")
+    public @ResponseBody Iterable<Order> getAllUsers(){
+        //This returns a JSON or XML with the users
+        return orderRepository.findAll();
     }
 
 //    @PostMapping("/update-order")

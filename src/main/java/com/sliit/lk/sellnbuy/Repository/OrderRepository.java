@@ -5,5 +5,6 @@ package com.sliit.lk.sellnbuy.Repository;
 
 public interface OrderRepository extends CrudRepository<Order, Integer> {
 //    void updateOrder(Order order);
+    Order findOderById(int id);
 
 }
